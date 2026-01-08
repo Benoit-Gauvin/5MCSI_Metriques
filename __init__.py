@@ -32,7 +32,7 @@ def mongraphique2():
     return render_template("histogramme.html")
 
 @app.route("/contact/")
-def contacter):
+def contacter():
     return render_template("contact.html")
                                                                                                                                        
 @app.route('/')
