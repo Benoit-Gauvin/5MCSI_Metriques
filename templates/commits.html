@@ -63,11 +63,12 @@
           // Grouper les commits par minute
           const commitsByMinute = {};
           
-          commits.forEach(commit => {
-            const date = new Date(commit.commit.author.date);
-            const minute = date.getMinutes();
+          for (const commit of commits) {
+            const dateString = commit.commit.author.date; // Format: "2024-02-11T11:57:27Z"
+            // Extraire directement les minutes de la chaîne (position 14-15)
+            const minute = parseInt(dateString.substring(14, 16));
             commitsByMinute[minute] = (commitsByMinute[minute] || 0) + 1;
-          });
+          }
           
           // Préparer les données pour le graphique
           commitData = [['Minute', 'Nombre de commits']];
