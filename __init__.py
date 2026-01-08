@@ -31,6 +31,10 @@ def mongraphique2():
 @app.route("/contact/")
 def contacter():
     return render_template("contact.html")
+
+@app.route("/commits/")
+def commits():
+    return render_template("commits.html")
                                                                                                                                        
 @app.route('/')
 def hello_world():
